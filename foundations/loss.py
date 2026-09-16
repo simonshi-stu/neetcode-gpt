@@ -19,5 +19,5 @@ class Solution:
         # Hint: clip y_pred to [1e-7, 1 - 1e-7] to avoid log(0)
         # return round(your_answer, 4)
         y_clip_pred = np.clip(y_pred, 1e-7, 1 - 1e-7)
-        
-        return round(((- np.mean(np.sum(y_true * np.log(y_clip_pred), axis = 1)))), 4)
+        L = - np.mean(np.sum(y_true * np.log(y_clip_pred), axis = 1))
+        return round(L, 4)
