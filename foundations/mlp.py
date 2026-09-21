@@ -15,4 +15,4 @@ class Solution:
             h = h @ weights[i] + biases[i]
             if i < len(weights) - 1:
                 h = np.maximum(h, 0)
-        return h
+        return np.round(h,5)
