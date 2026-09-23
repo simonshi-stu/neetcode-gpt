@@ -15,6 +15,6 @@ class Solution:
         sigma_sqaure = np.var(x)
         eps = 1e-5
         x_hat = (x - u) / np.sqrt(sigma_sqaure + eps)
-        out = x_hat * gamma + beta
+        out = gamma * x_hat + beta
         return np.round(out, 5)
 
