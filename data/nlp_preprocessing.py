@@ -21,5 +21,5 @@ class Solution:
             words = sentence.split()
             idx = [word_to_id[word] for word in words]
             encoded_tensors.append(torch.tensor(idx, dtype = torch.long))
-        padded = nn.utils.rnn.pad_sequence(encoded_tensors, batch_first = True, padding_value = 0)
+        padded = nn.utils.rnn.pad_sequence(encoded_tensors, padding_value = 0, batch_first = True)
         return padded.float()
